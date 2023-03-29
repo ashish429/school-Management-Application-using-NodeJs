@@ -14,15 +14,22 @@ mongoose.connect("mongodb+srv://Ashishshukla03:ashish123@cluster0.mkmznp0.mongod
 })
 
 //routes
-const routes=require('./routes/main')
-
+const teachRoutes = require("./routes/teacherRoutes")
+const studRoutes = require("./routes/studentRoutes")
+app.use("/teacher",teachRoutes);
+app.use("/student",studRoutes);
 
 //template engine=>"hbs"
 app.set("view engine","hbs")
 app.set("views","views")
 
-app.use(express.static("public"))
-app.use('',routes)
+//const teachRoutes = require("./routes/teacherRoutes")
+//const studRoutes = require("./routes/studentRoutes")
+//app.use("/teacher",teachRoutes);
+//app.use("/student",studRoutes);
+
+//app.use(express.static("public"))
+//app.use('',routes)
 
 //app.use(
     // Where "/scripts/js" is a folder into "public"
@@ -30,6 +37,17 @@ app.use('',routes)
 //    express.static(
  //       path.join(__dirname, "node_modules/bootstrap/dist/js")   ));
 
+
+ //routes
+app.get("/", (req, res) => {
+    res.render("index");
+  });
+
 app.listen(process.env.PORT | 5556,()=>{
     console.log("server started");
 });
+
+// 404 page
+app.use((req, res) => {
+    res.status(404).render('404', { title: '404' });
+  });

@@ -10,18 +10,17 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="css/add-student.css">
 </head>
-
 <body>
     <nav class="navbar navbar-light bg-primary">
         <div class="container-fluid">
             <h1>Result Management System</h1>
             <div class="d-flex">
-                <button routerLink="" class="btn btn-danger mx-3">Logout</button>
+                <button href="/" class="btn btn-danger mx-3">Logout</button>
             </div>
         </div>
     </nav>
     <div class="back">
-        <a routerLink="/teacher">Back</a>
+        <a href="/teacher/option">Back</a>
     </div>
     <div class="new">
         <div class="alert alert-danger" *ngIf="error_message.length!==0">
@@ -30,31 +29,31 @@
         <p>Add New Result</p>
     </div>
     <div class="container-fluid">
-        <form class="form-body" (ngSubmit)="submit()" ngNativeValidate>
+        <form class="form-body" method="POST" autocomplete="off">
             <div class="form-group row space">
                 <label for="rollNo" class="col-sm-1 control-label">Roll No</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="rollNo" id="rollNo" required [(ngModel)]="rollNo">
+                    <input type="text" class="form-control" name="rollNo" id="rollNo" >
                 </div>
             </div>
             <div class="form-group row space">
                 <label for="name" class="col-sm-1 control-label">Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="name">
+                    <input type="text" class="form-control" name="name" id="name" required >
                 </div>
             </div>
             <div class="form-group row space">
                 <label for="dob" class="col-sm-1 control-label" style="padding-left:10px ;">DOB</label>
                 <div class="col-sm-6">
                     <input type="date" class="form-control" min="2000-01-01" max="2021-12-31" name="dob" id="dob"
-                        required [(ngModel)]="dob">
+                        required >
                 </div>
             </div>
             <div class="form-group row space">
                 <label for="score" class="col-sm-1 control-label">Score</label>
                 <div class="col-sm-6">
                     <input type="number" class="form-control" max="100" min="0" name="score" id="score" required
-                        [(ngModel)]="score">
+                        >
                 </div>
             </div>
             <div class="row" style="padding-left: 40%;padding-top: 40px;">

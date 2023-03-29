@@ -16,12 +16,12 @@
         <div class="container-fluid">
             <h1>Result Management System</h1>
             <div class="d-flex">
-                <button routerLink="" class="btn btn-danger mx-3">Logout</button>
+                <button href="/" class="btn btn-danger mx-3">Logout</button>
             </div>
         </div>
     </nav>
     <div class="back">
-        <a routerLink="/">Back</a>
+        <a href="/" class="btn btn-info">Back</a>
     </div>
 
     <div class="new">
@@ -31,17 +31,17 @@
         <p>Find Result</p>
     </div>
     <div class="container-fluid">
-        <form class="form-body" (ngSubmit)="submit()" ngNativeValidate>
+        <form class="form-body" method="POST" class="teachForm">
             <div class="form-group row space">
                 <label for="rollNo" class="col-sm-2 control-label">Roll No.</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="rollNo" id="rollNo" required [(ngModel)]="rollNo" />
+                    <input type="text" class="form-control" name="rollNo" id="rollNo" required />
                 </div>
             </div>
             <div class="form-group row space">
                 <label for="name" class="col-sm-2 control-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="name" id="name" required [(ngModel)]="name" />
+                    <input type="text" class="form-control" name="name" id="name" required />
                 </div>
             </div>
             <div class="row" style="padding-left: 43%; padding-top: 40px">
